@@ -1,6 +1,6 @@
 // ===== パスワードゲート =====
 // SHA-256ハッシュで比較（平文をソースに書かない）
-const PASS_HASH = '8a6b774648e42a9e606c6a427838f2f275fbef9a6225a2eb460ba0d4790fcefa';
+const PASS_HASH = '1e05d5568f260c6fca228fd1745d2126f636729bb0fb406ecae62c725026d61c';
 
 async function sha256(text) {
   const data = new TextEncoder().encode(text);
