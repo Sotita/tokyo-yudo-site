@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東京湯道部 — 温泉を守り、愛し、浸かり、湯道を極める</title>
+  <meta name="description" content="東京湯道部は、小山薫堂先生の湯道の精神を礎に、温泉・銭湯文化を守り、湯を通じた交流と秘湯の承継を目指す部活動です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♨</text></svg>">
+</head>
+<body>
+
+  <!-- ===== パスワードゲート ===== -->
+  <div id="gate" class="gate">
+    <div class="gate-box">
+      <div class="gate-symbol">♨</div>
+      <h2 class="gate-title">東京湯道部</h2>
+      <p class="gate-sub">部員専用ページです</p>
+      <form id="gate-form" class="gate-form" onsubmit="return checkPass()">
+        <input type="password" id="gate-input" class="gate-input" placeholder="合言葉を入力" autocomplete="off">
+        <button type="submit" class="gate-btn">入湯</button>
+      </form>
+      <p id="gate-error" class="gate-error"></p>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-symbol">♨</div>
+      <h1 class="hero-title">東京湯道部</h1>
+      <p class="hero-subtitle">温泉を守り、愛し、浸かり、湯道を極める。</p>
+      <div class="hero-divider"></div>
+      <p class="hero-quote">湯道は作法にあらず、湯に向かう姿勢なり。</p>
+      <a href="#about" class="hero-cta">入部について</a>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===== 湯道の精神 ===== -->
+  <section class="section spirit" id="spirit">
+    <div class="container">
+      <h2 class="section-title">湯道の三つの精神</h2>
+      <p class="section-lead">小山薫堂先生が提唱し、湯道文化振興会が掲げる精神を礎とする。</p>
+
+      <div class="spirit-grid">
+        <div class="spirit-card" data-num="一">
+          <h3>感謝の念を抱く</h3>
+          <p>湯に浸かるたびに、この日常が特別であることを改めて想い、この環境に感謝すべし。</p>
+        </div>
+        <div class="spirit-card" data-num="二">
+          <h3>慮る心を培う</h3>
+          <p>湯に浸かる者、常に次客もしくは隣客の気分となり、慮る心を培うべし。</p>
+        </div>
+        <div class="spirit-card" data-num="三">
+          <h3>自己を磨く</h3>
+          <p>湯の力を借りて頭を空にし、ありのままの自己と対峙することで心を癒すべし。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 活動内容 ===== -->
+  <section class="section activities" id="activities">
+    <div class="container">
+      <h2 class="section-title">活動内容</h2>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-icon">湯</div>
+          <h3>湯の共有</h3>
+          <p>部員が訪れた温泉・銭湯・サウナの情報を共有し、名湯の記録を積み重ねる。</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">会</div>
+          <h3>湯会</h3>
+          <p>部員同士で温泉・銭湯に赴き、湯上がりに食卓を囲んで語り合う。</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">援</div>
+          <h3>湯の支援</h3>
+          <p>存続危機にある温泉・銭湯の情報を集め、力の及ぶ範囲で支援する。</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">探</div>
+          <h3>湯の探求</h3>
+          <p>名湯・秘湯の探訪、湯道に関する学びの機会を設ける。</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">継</div>
+          <h3>湯の承継</h3>
+          <p>部会を通じて寄付を募り、秘湯・名湯の存続および承継を支援する。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 組織 ===== -->
+  <section class="section organization" id="organization">
+    <div class="container">
+      <h2 class="section-title">組織</h2>
+
+      <div class="org-grid">
+        <div class="org-card">
+          <div class="org-role">議長</div>
+          <div class="org-name">山岡照幸</div>
+          <div class="org-desc">本部の最高責任者<br>部会・総会の進行、最終意思決定</div>
+        </div>
+        <div class="org-card">
+          <div class="org-role">部長</div>
+          <div class="org-name">沼沢想太</div>
+          <div class="org-desc">部の統括・運営執行<br>立ち上げ期の入部承認</div>
+        </div>
+        <div class="org-card">
+          <div class="org-role">幹部</div>
+          <div class="org-name">牛ノ濱弁護士</div>
+          <div class="org-desc">部の運営助言<br>入部推薦権の行使</div>
+        </div>
+      </div>
+
+      <div class="org-note">
+        <h3>湯組（グループ制度）</h3>
+        <p>部員数の増加に伴い、四名から六名を一組とする「湯組」を編成。<br>湯組は年間を通じて活動の基本単位となり、組内で湯会の企画・実施を行う。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 入部案内 ===== -->
+  <section class="section join" id="about">
+    <div class="container">
+      <h2 class="section-title">入部について</h2>
+
+      <div class="join-phases">
+        <div class="join-phase active">
+          <div class="phase-badge">現在</div>
+          <h3>立ち上げ期<span>令和八年四月〜六月</span></h3>
+          <p>部長の承認のみで入部可能。湯を愛する心があれば、基本的に拒むことはしない。</p>
+          <p class="phase-note">この期間に入部した方は「創設部員」として記録されます。</p>
+        </div>
+        <div class="join-phase">
+          <div class="phase-badge">七月以降</div>
+          <h3>通常期</h3>
+          <ul>
+            <li>幹部一名の推薦をもって入部</li>
+            <li>部員二名以上の連名推薦をもって入部</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="join-requirements">
+        <h3>入部資格</h3>
+        <ul>
+          <li>湯道の三つの精神を理解し、湯を守り、愛し、浸かる意志を持つこと</li>
+          <li>月に最低一回、自宅外の温泉・銭湯・サウナのいずれかに足を運ぶこと</li>
+        </ul>
+      </div>
+
+      <div class="join-fee">
+        <p><strong>会費：</strong>当面なし（活動に伴う実費は都度負担）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ビジョン ===== -->
+  <section class="section vision" id="vision">
+    <div class="container">
+      <h2 class="section-title">ビジョン</h2>
+
+      <div class="vision-timeline">
+        <div class="vision-item">
+          <div class="vision-period">近期</div>
+          <div class="vision-content">
+            <h3>令和八年四〜六月</h3>
+            <p>部長承認制のもと創設部員を集め、湯の共有と湯会の文化を醸成する。</p>
+          </div>
+        </div>
+        <div class="vision-item">
+          <div class="vision-period">中期</div>
+          <div class="vision-content">
+            <h3>令和八年度後半〜</h3>
+            <p>推薦制への移行、湯組の編成、定期的な部会の確立。会費制度の検討。</p>
+          </div>
+        </div>
+        <div class="vision-item">
+          <div class="vision-period">長期</div>
+          <div class="vision-content">
+            <h3>温泉文化の承継</h3>
+            <p>部会・総会を通じて寄付を募り、存続危機にある秘湯・名湯の承継支援を実現する。湯道を通じて温泉文化を次世代に繋ぐ。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-symbol">♨</div>
+      <p class="footer-quote">湯道は作法にあらず、湯に向かう姿勢なり。</p>
+      <p class="footer-closing">東京湯道部、ここに始まる。</p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">令和八年四月一日　施行</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
