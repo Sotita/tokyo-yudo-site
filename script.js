@@ -24,6 +24,17 @@ async function checkPass() {
   }
 }
 
+// フォームsubmitをJSで制御
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('gate-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      checkPass();
+    });
+  }
+});
+
 // セッション中は再入力不要
 if (sessionStorage.getItem('yudo_auth') === '1') {
   document.addEventListener('DOMContentLoaded', () => {
