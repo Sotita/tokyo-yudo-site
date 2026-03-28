@@ -1,34 +1,26 @@
 // ===== パスワードゲート =====
-// SHA-256ハッシュで比較（平文をソースに書かない）
-const PASS_HASH = '1e05d5568f260c6fca228fd1745d2126f636729bb0fb406ecae62c725026d61c';
+// Base64エンコードで難読化（カジュアル保護）
+const PASS_KEY = 'T25zZW5kYWlzdWtp'; // Base64
 
-async function sha256(text) {
-  const data = new TextEncoder().encode(text);
-  const hash = await crypto.subtle.digest('SHA-256', data);
-  return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
+function checkPass() {
+  var input = document.getElementById('gate-input').value;
+  var key = atob(PASS_KEY);
 
-async function checkPass() {
-  const input = document.getElementById('gate-input').value;
-  const hash = await sha256(input);
-
-  if (hash === PASS_HASH) {
+  if (input === key) {
     document.getElementById('gate').classList.add('hidden');
     document.body.classList.remove('locked');
     sessionStorage.setItem('yudo_auth', '1');
-    return false;
   } else {
     document.getElementById('gate-error').textContent = '合言葉が違います';
     document.getElementById('gate-input').value = '';
-    return false;
   }
 }
 
 // フォームsubmitをJSで制御
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('gate-form');
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('gate-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
       checkPass();
     });
